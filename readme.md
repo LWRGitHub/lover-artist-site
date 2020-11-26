@@ -1,7 +1,7 @@
 ### Welcome to my artist website 
 
--This site will sells art & art suplise 
--As you may have guseed by now my artist name is Lover 
+- This site will sells art & art suplise 
+- As you may have guseed by now my artist name is Lover 
 
 ***Languages/Frameworks Used***
 
