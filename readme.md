@@ -5,7 +5,7 @@
 
 **Languages/Frameworks Used:**
 
-Python, JS, Flask, Jinga2, HTML/CSS, Bootstrap 
+Python, JS, Flask, Jinga2, jQuery, HTML/CSS, Bootstrap
 
 **Wire Frames/Hi-Rez Mock ups:**
 
@@ -15,5 +15,4 @@ Python, JS, Flask, Jinga2, HTML/CSS, Bootstrap
 ### Setup
 
 - $pip3 install flask
-
 - $python3 app.py
