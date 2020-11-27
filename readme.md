@@ -10,3 +10,10 @@ Python, JS, Flask, Jinga2, HTML/CSS, Bootstrap
 **Wire Frames/Hi-Rez Mock ups:**
 
 - [See Project on Figma](https://www.figma.com/file/oYakbnxT72r856QIczCCF7/Untitled?node-id=13%3A15)
+
+
+### Setup
+
+- $pip3 install flask
+
+- $python3 app.py
