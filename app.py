@@ -52,5 +52,11 @@ def help():
 
     return render_template('help.html')
 
+@app.route('/jobs')
+def jobs():
+    """Display the jobs page."""
+
+    return render_template('jobs.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
