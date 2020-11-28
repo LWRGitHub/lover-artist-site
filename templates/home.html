@@ -1,8 +1,40 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<header>
+    <!-- page heading -->
+    <div class="jumbotron jumbotron-fluid m-1 rounded">
+        <div class="container">
+          <h1 class="display-4 text-center">Lover</h1>
+        </div>
+    </div>
+</header>
 <main>
+    <!-- img links -->
+    <div class="container">
+        <div class="row text-center">
+          <div class="col-sm-3 col-6 border rounded">col</div>
+          <div class="col-sm-3 col-6 border rounded">col</div>
+          <div class="col-sm-3 col-6 border rounded">col</div>
+          <div class="col-sm-3 col-6 border rounded">col</div>
+        </div>
+    </div>
 
+    <!-- spotlight links boostrap cards -->
+    <h1 class="mt-5 mb-2 text-center">In The Spotlight</h1>
+    <div class="row row-cols-1 row-cols-md-3">
+      {% for item in spotlight %}
+        <div class="col mb-4">
+            <div class="card h-100">
+            <img src="{{item.src}}" class="card-img-top" alt="{{item.alt}}">
+            <div class="card-body">
+                <h5 class="card-title">{{item.title}}</h5>
+                <p class="card-text">{{item.info}}</p>
+            </div>
+            </div>
+        </div>
+      {% endfor %}
+    </div>
 </main>
 
 {% endblock content %}
