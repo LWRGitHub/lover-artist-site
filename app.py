@@ -25,14 +25,109 @@ def about():
 @app.route('/art')
 def art():
     """Display the art page."""
+    
 
-    return render_template('art.html')
+    context = {
+        "page": {
+            "name": "Art"
+        },
+        "other_pages": [
+            {"name": "Original Pantings"},
+            {"name": "Prints"},
+            {"name": "Artsy Products"}
+        ],
+        "products": [
+            {
+                "src": "#",
+                "alt": "#",
+                "title": "EX Product"
+            },
+            {
+                "src": "#",
+                "alt": "#",
+                "title": "EX Product"
+            },
+            {
+                "src": "#",
+                "alt": "#",
+                "title": "EX Product"
+            },
+            {
+                "src": "#",
+                "alt": "#",
+                "title": "EX Product"
+            },
+            {
+                "src": "#",
+                "alt": "#",
+                "title": "EX Product"
+            },
+            {
+                "src": "#",
+                "alt": "#",
+                "title": "EX Product"
+            },
+            {
+                "src": "#",
+                "alt": "#",
+                "title": "EX Product"
+            },
+            {
+                "src": "#",
+                "alt": "#",
+                "title": "EX Product"
+            },
+            {
+                "src": "#",
+                "alt": "#",
+                "title": "EX Product"
+            },
+            {
+                "src": "#",
+                "alt": "#",
+                "title": "EX Product"
+            },
+            {
+                "src": "#",
+                "alt": "#",
+                "title": "EX Product"
+            },
+            {
+                "src": "#",
+                "alt": "#",
+                "title": "EX Product"
+            },
+            {
+                "src": "#",
+                "alt": "#",
+                "title": "EX Product"
+            },
+            {
+                "src": "#",
+                "alt": "#",
+                "title": "EX Product"
+            },
+        ]
+    }
+
+    return render_template('products.html', **context)
 
 @app.route('/art_supplies')
 def art_supplies():
     """Display the art_supplies page."""
 
-    return render_template('art_supplies.html')
+    context = {
+        "page": {
+            "name": "Art Supplies"
+        },
+        "other_pages": [
+            {"name": "Paint"},
+            {"name": "Brushes & More"},
+            {"name": "Artsy Canvases"}
+        ]
+    }
+
+    return render_template('products.html', **context)
 
 @app.route('/item')
 def item():
