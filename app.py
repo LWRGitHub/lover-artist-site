@@ -308,7 +308,7 @@ def cart():
                 "discount": 211.27,
             },
         ],
-        "art_products": art_products
+        "products": products
     }
 
     for item in context["cart"]:
