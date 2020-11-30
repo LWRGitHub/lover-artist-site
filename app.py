@@ -303,7 +303,35 @@ def item(item_id):
 def cart():
     """Display the cart page."""
 
-    return render_template('cart.html')
+    context ={
+        "cart": [
+            {
+                "src": "https://ih1.redbubble.net/image.1751903044.6537/fp,840x830,black,off_white,box20,s,f8f8f8-pad,1000x1000,f8f8f8.jpg",
+                "alt": "#",
+                "title": "Ex Title",
+                "description": "Ex description goes here.",
+                "price": 499.49,
+                "sale": True,
+                "discount": 211.27,
+            },
+            {
+                "src": "https://ih1.redbubble.net/image.1751903044.6537/fp,840x830,black,off_white,box20,s,f8f8f8-pad,1000x1000,f8f8f8.jpg",
+                "alt": "#",
+                "title": "Ex Title",
+                "description": "Ex description goes here.",
+                "price": 499.49,
+                "sale": True,
+                "discount": 211.27,
+            },
+        ],
+        "art_products": art_products
+    }
+
+    for item in context["cart"]:
+        if item["sale"]:
+            item["sale_price"] = item["price"] - item["discount"]
+
+    return render_template('cart.html', **context)
 
 @app.route('/help')
 def help():

@@ -1,7 +1,111 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<header class="my-2">
+    <a href="/art" class="text-dark ml-2">
+        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+        </svg>
+        <span>Keep Shopping</span>
+    </a>
+</header>
 <main>
+    
+    <div class="row">
+      
+        <div class="col-12 col-sm-8">
+          {% for item in cart %}
+            <div class="row border rounded m-1 p-1">
+                <div class="col-4">
+                    <img width="100%" src="{{ item.src }}" alt="{{ item.alt }}" />
+                </div>
+                <div class="col-8">
+                    <h3>{{ item.title }}</h3>
+
+                    {% if item.sale %}
+                        <span id="old-price">{{ item.price }}</span>
+                        <span id="save"> Save ${{ item.discount }}</span>
+                        <p id="sale">Sale ${{ item.sale_price }}</p>
+                    {% else %}
+                        <span>${{ item.price }}</span>
+                    {% endif %}
+
+                    <div class="row">
+                        <div class="col">
+                            <a id="cart-anchor" href="#">Remove</a>
+                        </div>
+                        <div class="col">
+                            <a id="cart-anchor" href="#">Save</a>
+                        </div>
+                        <div class="col">
+                            <input id="num-input" value="1" type="number" />
+                        </div>
+                    </div>
+
+                    
+                    
+                </div>
+                
+            </div>
+          {% endfor %}
+        </div>
+      
+        <div class="col">
+            <div height="100px" class="row border rounded m-1 p-1">
+                <div class="col-12">
+                    <form class="mx-auto">
+                        <label>Ship:</label>
+                        <select name="ship" form="shipform">
+                            <option value="volvo">next day</option>
+                            <option value="opel">3 days</option>
+                            <option value="audi">5 days</option>
+                            <option value="audi">7 days</option>
+                        </select>
+                    </form>
+                </div>
+                <div class="col-9">
+                    <span id="calculations">Subtotal:</span>
+                </div>
+                <div class="col-3">
+                    <span id="calculations">$998.98</span>
+                </div>
+                <div class="col-9">
+                    <span id="calculations">Promotional Savings:</span>
+                </div>
+                <div class="col-3">
+                    <span id="promo-save">-$576.44</span>
+                </div>
+                <div class="col-9">
+                    <span id="calculations">Subtotal After Discounts:</span>
+                </div>
+                <div class="col-3">
+                    <span id="calculations">$422.54</span>
+                </div>
+                <div class="col-9">
+                    <span id="calculations">Shipping:</span>
+                </div>
+                <div class="col-3">
+                    <span id="calculations">Free</span>
+                </div>
+                <div class="col-9">
+                    <span id="calculations">Estimated tax:</span>
+                </div>
+                <div class="col-3">
+                    <span id="calculations">$79.92</span>
+                </div>
+                <div class="col-9">
+                    <span id="total">Your Total:</span>
+                </div>
+                <div class="col-3">
+                    <span id="total">$502.46</span>
+                </div>
+
+                <div class="col-12">
+                    <a href="#" class="btn btn-primary text-center">Check Out</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </main>
 

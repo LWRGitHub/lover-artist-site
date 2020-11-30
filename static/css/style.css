@@ -42,4 +42,22 @@
  #num-input{
     width: 50px;
  }
- /* ----------/item pg---------- */
+/* ----------/item pg---------- */
+/* ----------cart---------- */
+#cart-anchor {
+    color: black;
+    font-size: small;
+    text-decoration: underline;
+}
+#calculations{
+    font-size: small;
+}
+#promo-save{
+    color: red;
+    font-size: small;
+}
+#total{
+    font-size: large;
+    font-weight: bold;
+}
+/* ----------/cart---------- */
