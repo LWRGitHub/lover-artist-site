@@ -2,6 +2,49 @@
 {% block content %}
 
 <main>
+    <div id="item" class="container my-5">
+        <div class="row">
+          <div class="col border rounded">
+            <img src="{{ src }}" alt="{{ alt }}"/>
+          </div>
+          <div class="col">
+            <h1 class="mb-5">{{ title }}</h1>
+
+            {% if sale %}
+                <span id="old-price" style="text-decoration: line-through;">${{ price }}</span><span id="save"> Save ${{ discount }}</span>
+                <p id="sale">Sale ${{ sale_price }}</p>
+            {% else %}
+                <span>${{ price }}</span>
+            {% endif %}
+
+            <form>
+                <input type="submit" value="Add To Cart" class="btn btn-primary"/>
+                <input class="ml-5" id="num-input" type="number" value="1" width="30px"/>
+                <svg height="32px" viewBox="0 0 16 16" class="bi bi-share border rounded p-1 mt-0 ml-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/>
+                </svg>
+            </form>
+
+            
+
+          </div>
+        </div>
+    </div>
+    <hr class="mx-5" />
+    <div id="item" class="container my-5">
+        <div class="row">
+          <div class="col ">
+            <h3 class="text-center mb-5" >Description</h3>
+            <p>{{ description }}</p>
+          </div>
+          <div class="col">
+            <h3 class="text-center mb-5" >Specifications</h3>
+            <p>{{ description }}</p>
+            
+          </div>
+        </div>
+    </div>
+    
 
 </main>
 

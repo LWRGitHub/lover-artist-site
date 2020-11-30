@@ -23,3 +23,23 @@
 
 }
 /* ----------/About---------- */
+ /* ----------item pg---------- */
+#item img {
+    width: 100%;
+ }
+ #old-price {
+     text-decoration: line-through;
+     font-size: small;
+ }
+ #save {
+     color: red;
+     font-size: small;
+ }
+ #sale {
+     color: red;
+     font-size: large;
+ }
+ #num-input{
+    width: 50px;
+ }
+ /* ----------/item pg---------- */
