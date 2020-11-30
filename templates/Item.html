@@ -4,25 +4,41 @@
 <main>
     <div id="item" class="container my-5">
         <div class="row">
-          <div class="col border rounded">
-            <img src="{{ src }}" alt="{{ alt }}"/>
+          <div class="col">
+            <img class="border rounded" src="{{ src }}" alt="{{ alt }}"/>
+            <br />
+            <div class="row mx-2 my-1">
+              {% for i in range(4) %}
+              <div class="col border rounded">
+                <img width='100%' src="{{src}}" alt="{{alt}}" />
+              </div>
+              {% endfor %}
+            </div>
           </div>
           <div class="col">
-            <h1 class="mb-5">{{ title }}</h1>
+            <h1 class="mb-5 mt-5">{{ title }}</h1>
 
             {% if sale %}
-                <span id="old-price" style="text-decoration: line-through;">${{ price }}</span><span id="save"> Save ${{ discount }}</span>
+            <span id="old-price">{{ price }}</span>
+                <span id="save"> Save ${{ discount }}</span>
                 <p id="sale">Sale ${{ sale_price }}</p>
             {% else %}
                 <span>${{ price }}</span>
             {% endif %}
 
-            <form>
-                <input type="submit" value="Add To Cart" class="btn btn-primary"/>
-                <input class="ml-5" id="num-input" type="number" value="1" width="30px"/>
-                <svg height="32px" viewBox="0 0 16 16" class="bi bi-share border rounded p-1 mt-0 ml-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/>
-                </svg>
+            <form class="row">
+                <div class="col-4">
+                  <a class="btn btn-primary" href="/cart">Add+</a>
+                  <!-- <input type="submit" value="Add+" class="btn btn-primary"/> -->
+                </div>
+                <div class="col-4">
+                  <input id="num-input" type="number" value="1" width="30px"/>
+                </div>
+                <div class="col-4">
+                  <svg height="32px" viewBox="0 0 16 16" class="bi bi-share border rounded p-1 " fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/>
+                  </svg>
+                </div>
             </form>
 
             
@@ -30,7 +46,9 @@
           </div>
         </div>
     </div>
+
     <hr class="mx-5" />
+
     <div id="item" class="container my-5">
         <div class="row">
           <div class="col ">
@@ -39,12 +57,45 @@
           </div>
           <div class="col">
             <h3 class="text-center mb-5" >Specifications</h3>
-            <p>{{ description }}</p>
             
+            <table class="table table-bordered">
+              <tbody>
+
+                <!-- {% for spec in Specifications %}
+                <tr>
+                  <th scope="row">{{ spec.header }}</th>
+                  <td>{{ spec.info }}</td>
+                </tr>
+                {% endfor %} -->
+
+                <tr>
+                  <th scope="row">Expl Hearder</th>
+                  <td>Expl info</td>
+                </tr>
+                <tr>
+                  <th scope="row">Expl Hearder</th>
+                  <td>Expl info</td>
+                </tr>
+                <tr>
+                  <th scope="row">Expl Hearder</th>
+                  <td>Expl info</td>
+                </tr>
+                
+              </tbody>
+            </table>
           </div>
         </div>
     </div>
-    
+
+    <hr class="mx-5" />
+
+    <div class="row mx-2 my-5">
+      {% for i in range(4) %}
+      <div class="col border rounded">
+        <img width='100%' src="{{art_products[i].src}}" alt="{{art_products[i].alt}}" />
+      </div>
+      {% endfor %}
+    </div>
 
 </main>
 
