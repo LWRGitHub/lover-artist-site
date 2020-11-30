@@ -13,26 +13,28 @@
     <!-- img links -->
     <div class="container">
         <div class="row text-center">
-          <div class="col-sm-3 col-6 border rounded">col</div>
-          <div class="col-sm-3 col-6 border rounded">col</div>
-          <div class="col-sm-3 col-6 border rounded">col</div>
-          <div class="col-sm-3 col-6 border rounded">col</div>
+          {% for pg in linked_pg %}
+          <a class="col-sm-3 col-6 border rounded text-dark" href="{{ pg.href }}">
+            <img width="100%" src="{{ pg.src }}" alt="{{ pg.alt }}"/>
+            <span>{{ pg.title }}</span>
+          </a>
+          {% endfor %}
         </div>
     </div>
 
     <!-- spotlight links boostrap cards -->
     <h1 class="mt-5 mb-2 text-center">In The Spotlight</h1>
-    <div class="row row-cols-1 row-cols-md-3">
+    <div class="row row-cols-1 row-cols-md-3 m-1">
       {% for item in spotlight %}
-        <div class="col mb-4">
+        <a class="col mb-4 text-dark" href="{{ item.href }}">
             <div class="card h-100">
             <img src="{{item.src}}" class="card-img-top" alt="{{item.alt}}">
-            <div class="card-body">
+            <div class="card-body text-center">
                 <h5 class="card-title">{{item.title}}</h5>
                 <p class="card-text">{{item.info}}</p>
             </div>
             </div>
-        </div>
+          </a>
       {% endfor %}
     </div>
 </main>

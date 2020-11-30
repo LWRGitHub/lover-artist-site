@@ -22,7 +22,7 @@ app = Flask(__name__)
 # for item in items:
 #     print(item.find("img", attrs={"class": "styles__image--2CwxX styles__rounded--1lyoH styles__fluid--3dxe-"}))
 
-art_products = [
+products = [
     {
         "src": "https://ih1.redbubble.net/image.1751903044.6537/fp,840x830,black,off_white,box20,s,f8f8f8-pad,1000x1000,f8f8f8.jpg",
         "alt": "#",
@@ -117,7 +117,62 @@ art_products = [
 def home():
     """Display the home page."""
 
-    return render_template('home.html')
+    context = {
+        "linked_pg": [
+            {
+                "src": "https://ih1.redbubble.net/image.1751903044.6537/fp,840x830,black,off_white,box20,s,f8f8f8-pad,1000x1000,f8f8f8.jpg",
+                "alt": "#",
+                "href": "/art",
+                "title": "Original Painting"
+            },
+            {
+                "src": "https://ih1.redbubble.net/image.1751866563.5340/ur,apron_realistic_flatlay,square,1000x1000.jpg",
+                "alt": "#",
+                "href": "/art",
+                "title": "Artsy Products"
+            },
+            {
+                "src": "https://s.alicdn.com/@sc01/kf/HTB1nUS4m1uSBuNjSsplq6ze8pXaS.jpg_300x300.jpg",
+                "alt": "#",
+                "href": "/art_supplies",
+                "title": "Art Supplies"
+            },
+            {
+                "src": "https://ih1.redbubble.net/image.1751903044.6537/fp,840x830,black,off_white,box20,s,f8f8f8-pad,1000x1000,f8f8f8.jpg",
+                "alt": "#",
+                "href": "/art",
+                "title": "Prints"
+            }
+        ],
+        "spotlight": [
+            {
+                "src": "https://ih1.redbubble.net/image.1751903044.6537/fp,840x830,black,off_white,box20,s,f8f8f8-pad,1000x1000,f8f8f8.jpg",
+                "alt": "#",
+                "title": "Example Product",
+                "_id": 764524756,
+                "info": "Ex info, the item info goes here.",
+                "href": "/item/764524756"
+            },
+            {
+                "src": "https://ih1.redbubble.net/image.1751903044.6537/fp,840x830,black,off_white,box20,s,f8f8f8-pad,1000x1000,f8f8f8.jpg",
+                "alt": "#",
+                "title": "Example Product",
+                "_id": 764524756,
+                "info": "Ex info, the item info goes here.",
+                "href": "/item/764524756"
+            },
+            {
+                "src": "https://ih1.redbubble.net/image.1751903044.6537/fp,840x830,black,off_white,box20,s,f8f8f8-pad,1000x1000,f8f8f8.jpg",
+                "alt": "#",
+                "title": "Example Product",
+                "_id": 764524756,
+                "info": "Ex info, the item info goes here.",
+                "href": "/item/764524756"
+            },
+        ]
+    }
+
+    return render_template('home.html', **context)
 
 @app.route('/about')
 def about():
@@ -151,7 +206,7 @@ def art():
                 "alt": "#"
             }
         ],
-        "products": art_products
+        "products": products
     }
 
     return render_template('products.html', **context)
@@ -181,78 +236,7 @@ def art_supplies():
                 "alt": "#"
             }
         ],
-        "products": [
-            {
-                "src": "https://ih1.redbubble.net/image.1751903044.6537/fp,840x830,black,off_white,box20,s,f8f8f8-pad,1000x1000,f8f8f8.jpg",
-                "alt": "#",
-                "title": "Example Product"
-            },
-            {
-                "src": "https://ih1.redbubble.net/image.1751903044.6537/fp,840x830,black,off_white,box20,s,f8f8f8-pad,1000x1000,f8f8f8.jpg",
-                "alt": "#",
-                "title": "Example Product"
-            },
-            {
-                "src": "https://ih1.redbubble.net/image.1751903044.6537/fp,840x830,black,off_white,box20,s,f8f8f8-pad,1000x1000,f8f8f8.jpg",
-                "alt": "#",
-                "title": "Example Product"
-            },
-            {
-                "src": "https://ih1.redbubble.net/image.1751903044.6537/fp,840x830,black,off_white,box20,s,f8f8f8-pad,1000x1000,f8f8f8.jpg",
-                "alt": "#",
-                "title": "Example Product"
-            },
-            {
-                "src": "https://ih1.redbubble.net/image.1751903044.6537/fp,840x830,black,off_white,box20,s,f8f8f8-pad,1000x1000,f8f8f8.jpg",
-                "alt": "#",
-                "title": "Example Product"
-            },
-            {
-                "src": "https://ih1.redbubble.net/image.1751903044.6537/fp,840x830,black,off_white,box20,s,f8f8f8-pad,1000x1000,f8f8f8.jpg",
-                "alt": "#",
-                "title": "Example Product"
-            },
-            {
-                "src": "https://ih1.redbubble.net/image.1751903044.6537/fp,840x830,black,off_white,box20,s,f8f8f8-pad,1000x1000,f8f8f8.jpg",
-                "alt": "#",
-                "title": "Example Product"
-            },
-            {
-                "src": "https://ih1.redbubble.net/image.1751903044.6537/fp,840x830,black,off_white,box20,s,f8f8f8-pad,1000x1000,f8f8f8.jpg",
-                "alt": "#",
-                "title": "Example Product"
-            },
-            {
-                "src": "https://ih1.redbubble.net/image.1751903044.6537/fp,840x830,black,off_white,box20,s,f8f8f8-pad,1000x1000,f8f8f8.jpg",
-                "alt": "#",
-                "title": "Example Product"
-            },
-            {
-                "src": "https://ih1.redbubble.net/image.1751903044.6537/fp,840x830,black,off_white,box20,s,f8f8f8-pad,1000x1000,f8f8f8.jpg",
-                "alt": "#",
-                "title": "Example Product"
-            },
-            {
-                "src": "https://ih1.redbubble.net/image.1751903044.6537/fp,840x830,black,off_white,box20,s,f8f8f8-pad,1000x1000,f8f8f8.jpg",
-                "alt": "#",
-                "title": "Example Product"
-            },
-            {
-                "src": "https://ih1.redbubble.net/image.1751903044.6537/fp,840x830,black,off_white,box20,s,f8f8f8-pad,1000x1000,f8f8f8.jpg",
-                "alt": "#",
-                "title": "Example Product"
-            },
-            {
-                "src": "https://ih1.redbubble.net/image.1751903044.6537/fp,840x830,black,off_white,box20,s,f8f8f8-pad,1000x1000,f8f8f8.jpg",
-                "alt": "#",
-                "title": "Example Product"
-            },
-            {
-                "src": "https://ih1.redbubble.net/image.1751903044.6537/fp,840x830,black,off_white,box20,s,f8f8f8-pad,1000x1000,f8f8f8.jpg",
-                "alt": "#",
-                "title": "Example Product"
-            },
-        ]
+        "products": products
     }
 
     return render_template('products.html', **context)
@@ -284,7 +268,7 @@ def item(item_id):
                 "info": "Expl info"
             }
         ],
-        "art_products": art_products
+        "products": products
     }
 
     if context["sale"]:
