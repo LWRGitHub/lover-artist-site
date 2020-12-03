@@ -3,7 +3,19 @@
     background-size: cover;
   }
 
+footer {
+    background-color: #4437ab;
+}
+
+body {
+    background-image: url('../img/2color-xxxligh-tan-hypnotize.png');
+}
+
 /* ----------nav---------- */
+nav{
+    background-color: #f0fcf8;
+    /* background-color: url('../img/xxlight-green-hyp.png'); */
+}
 #cart-icon{
     position:absolute;
     top:0px;

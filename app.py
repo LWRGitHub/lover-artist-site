@@ -24,7 +24,7 @@ app = Flask(__name__)
 
 products = [
     {
-        "src": "https://ih1.redbubble.net/image.1751903044.6537/fp,840x830,black,off_white,box20,s,f8f8f8-pad,1000x1000,f8f8f8.jpg",
+        "src": "data:image/gif;base64,R0lGODdhFQAXAPAAANba3wAAACwAAAAAFQAXAAACFISPqcvtD6OctNqLs968+w+GolUAADs=",
         "alt": "#",
         "title": "Example Product",
         "_id": 123456789
