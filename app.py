@@ -3,6 +3,7 @@ from flask import Flask, request, redirect, render_template, url_for
 # scraper for getting data
 # from bs4 import BeautifulSoup as bs
 # import requests
+# import time
 
 ############################################################
 # SETUP
@@ -16,7 +17,9 @@ app = Flask(__name__)
 
 # get data from redbuble
 # r = requests.get("https://www.redbubble.com/shop/ap/59785340")
+# time.sleep(2)
 # soup = bs(r.content)
+# time.sleep(2)
 # items = soup.find_all("a", attrs={"class": "styles__link--2sYi3"})
 
 # for item in items:
