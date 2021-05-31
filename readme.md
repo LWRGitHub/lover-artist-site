@@ -32,7 +32,7 @@ python3 app.py
 
 ***Home***
 
-<img src="https://raw.githubusercontent.com/LWRGitHub/lover-artist-site/master/static/img/readme-img/home.png" alt="this is a screen shot of the home page for Lover's art site.">
+<img src="https://raw.githubusercontent.com/LWRGitHub/lover-artist-site/master/static/img/readme-img/home-pg.png" alt="this is a screen shot of the home page for Lover's art site.">
 
 
 ***Cart***
