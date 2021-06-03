@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div style="position:relative;text-align:center;color: rgba(0, 0, 0, 0.5);">
+  <h1 style="position:absolute;left:3%;top:0%;font-size:250px;transform:translate(-3%, -15%);">404</h1>
+  <img src="../static/img/empty-room-with-chair.jpeg" width="100%" />
+  <div style="position: absolute;bottom:0%;left: 50%;transform: translate(-50%, -5%); font-size:20px;">
+    <p style="color: rgb(0, 0, 0);;">The page you requested could not be found.</p>
+    <a type="button" class="btn btn-outline-info nav-link mx-2 px-4 text-info" href="/">Home</a>
+  </div>
+</div>
+
+{% endblock content %}

@@ -12,10 +12,7 @@ body {
 }
 
 /* ----------nav---------- */
-nav{
-    background-color: #f0fcf8;
-    /* background-color: url('../img/xxlight-green-hyp.png'); */
-}
+
 #cart-icon{
     position:absolute;
     top:0px;
