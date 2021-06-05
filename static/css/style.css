@@ -12,10 +12,20 @@ body {
 }
 
 /* ----------nav---------- */
-
+#logo-big-screen{
+    position:absolute;
+    left:12px;
+    top:12px;
+}
+#logo-small-screen{
+    position:absolute !important;
+    left:80px !important;
+    top:12px !important;
+    border-style:none !important;
+}
 #cart-icon{
     position:absolute;
-    top:0px;
+    top:12px;
     right:0;
 }
 #search{
