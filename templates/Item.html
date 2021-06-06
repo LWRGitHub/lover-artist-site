@@ -5,11 +5,11 @@
     <div id="item" class="container my-5">
         <div class="row">
           <div class="col">
-            <img class="border rounded" src="{{ src }}" alt="{{ alt }}"/>
+            <img class="border rounded" src="{{ src_main }}" alt="{{ alt }}"/>
             <br />
             <div class="row mx-2 my-1">
-              {% for i in range(4) %}
-              <div class="col border rounded">
+              {% for src in src_li %}
+              <div class="col border rounded m-1">
                 <img width='100%' src="{{src}}" alt="{{alt}}" />
               </div>
               {% endfor %}

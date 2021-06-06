@@ -34,7 +34,7 @@ pymongo==3.11.0
 pyparsing==2.4.7
 pytest==6.1.2
 python-dateutil==2.8.1
-python-dotenv==0.14.0
+python-dotenv==0.17.1
 pytz==2020.1
 requests==2.24.0
 selenium==3.141.0
@@ -45,3 +45,5 @@ urllib3==1.25.10
 virtualenv==20.0.31
 Werkzeug==1.0.1
 wrapt==1.12.1
+bs4==0.0.1
+selenium==4.0.0a1
