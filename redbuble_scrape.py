@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup as bs
 import requests
 import time
-
+import json
 
 products = []
 art_work = [
@@ -21,7 +21,7 @@ art_work = [
 # get data from redbuble
 for art in art_work:
     r = requests.get(f"https://www.redbubble.com/people/PaintedArtLover/works/{art}")
-    soup = bs(r.content)
+    soup = bs(r.content, 'lxml')
     items = soup.find_all("li", attrs={"class": "carousel_item"})
 
     for item in items:
@@ -30,7 +30,7 @@ for art in art_work:
 
         # --Go into the webpage that is specific to the product and grab data on product--
         r_item = requests.get(href)
-        soup_item = bs(r_item.content)
+        soup_item = bs(r_item.content, 'lxml')
         imgs = soup_item.find_all("img", attrs={"class": "GalleryImage__img--12Vov"})
         srcs = []
         for img in imgs:
@@ -66,6 +66,14 @@ for art in art_work:
         })
 
 print(products)
+# data = json.dumps(products)
+# f = open("data.txt", "a")
+# f.write(data)
+# f.close()
+
+#open and read the file after the appending:
+# f = open("data.txt", "r")
+# print(f.read())
 
 # items data
 
