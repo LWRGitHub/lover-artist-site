@@ -15,125 +15,125 @@ app = Flask(__name__)
 # Test Data
 ############################################################
 
-products = []
-art_work = [
-    "59786537-Lady-in-the-Wallpaper",
-	"59785340-Dancing-Ladies",
-	"44242884-Lights-&-Dust",
-	"44241848-Paint-Mix",
-	"44239383-Cave-Flowers",
-	"44239763-Green-Splash",
-	"44241267-Pink-Spray",
-	"44240623-Lover's-Self-Portrait",
-	"44208376-Blue-Ocean",
-	"44211284-Painted-Acrylic-Color-Flow",
-	"44227432-Colorful-Yellow-Painted-Twist",
-]
+# products = []
+# art_work = [
+#     "59786537-Lady-in-the-Wallpaper",
+# 	"59785340-Dancing-Ladies",
+# 	"44242884-Lights-&-Dust",
+# 	"44241848-Paint-Mix",
+# 	"44239383-Cave-Flowers",
+# 	"44239763-Green-Splash",
+# 	"44241267-Pink-Spray",
+# 	"44240623-Lover's-Self-Portrait",
+# 	"44208376-Blue-Ocean",
+# 	"44211284-Painted-Acrylic-Color-Flow",
+# 	"44227432-Colorful-Yellow-Painted-Twist",
+# ]
 # get data from redbuble
-for art in art_work:
-    r = requests.get(f"https://www.redbubble.com/people/PaintedArtLover/works/{art}")
-    soup = bs(r.content)
-    items = soup.find_all("li", attrs={"class": "carousel_item"})
+# for art in art_work:
+#     r = requests.get(f"https://www.redbubble.com/people/PaintedArtLover/works/{art}")
+#     soup = bs(r.content)
+#     items = soup.find_all("li", attrs={"class": "carousel_item"})
 
-    for item in items:
-        href = item.find("a")['href']
-        href_len = len(href)
-        products.append({
-            "href": href,
-            "title": item.find("a")['title'],
-            "src": item.find("img")['src'],
-            "alt": item.find("img")['alt'],
-            "_id": href[href_len-14:href_len]
-        })
+#     for item in items:
+#         href = item.find("a")['href']
+#         href_len = len(href)
+#         products.append({
+#             "href": href,
+#             "title": item.find("a")['title'],
+#             "src": item.find("img")['src'],
+#             "alt": item.find("img")['alt'],
+#             "_id": href[href_len-14:href_len]
+#         })
 
 # print(products)
 
-# products = [
-#     {
-#         "src": "data:image/gif;base64,R0lGODdhFQAXAPAAANba3wAAACwAAAAAFQAXAAACFISPqcvtD6OctNqLs968+w+GolUAADs=",
-#         "alt": "#",
-#         "title": "Example Product",
-#         "_id": 123456789
-#     },
-#     {
-#         "src": "https://ih1.redbubble.net/image.1751903044.6537/fp,840x830,black,off_white,box20,s,f8f8f8-pad,1000x1000,f8f8f8.jpg",
-#         "alt": "#",
-#         "title": "Example Product",
-#         "_id": 7653413
-#     },
-#     {
-#         "src": "https://ih1.redbubble.net/image.1751903044.6537/fp,840x830,black,off_white,box20,s,f8f8f8-pad,1000x1000,f8f8f8.jpg",
-#         "alt": "#",
-#         "title": "Example Product",
-#         "_id": 9786416736078
-#     },
-#     {
-#         "src": "https://ih1.redbubble.net/image.1751903044.6537/fp,840x830,black,off_white,box20,s,f8f8f8-pad,1000x1000,f8f8f8.jpg",
-#         "alt": "#",
-#         "title": "Example Product",
-#         "_id": 7645262356989
-#     },
-#     {
-#         "src": "https://ih1.redbubble.net/image.1751903044.6537/fp,840x830,black,off_white,box20,s,f8f8f8-pad,1000x1000,f8f8f8.jpg",
-#         "alt": "#",
-#         "title": "Example Product",
-#         "_id": 76533412359567874336745
-#     },
-#     {
-#         "src": "https://ih1.redbubble.net/image.1751903044.6537/fp,840x830,black,off_white,box20,s,f8f8f8-pad,1000x1000,f8f8f8.jpg",
-#         "alt": "#",
-#         "title": "Example Product",
-#         "_id": 87641797868
-#     },
-#     {
-#         "src": "https://ih1.redbubble.net/image.1751903044.6537/fp,840x830,black,off_white,box20,s,f8f8f8-pad,1000x1000,f8f8f8.jpg",
-#         "alt": "#",
-#         "title": "Example Product",
-#         "_id": 8965452124547867800679546
-#     },
-#     {
-#         "src": "https://ih1.redbubble.net/image.1751903044.6537/fp,840x830,black,off_white,box20,s,f8f8f8-pad,1000x1000,f8f8f8.jpg",
-#         "alt": "#",
-#         "title": "Example Product",
-#         "_id": 8728758734
-#     },
-#     {
-#         "src": "https://ih1.redbubble.net/image.1751903044.6537/fp,840x830,black,off_white,box20,s,f8f8f8-pad,1000x1000,f8f8f8.jpg",
-#         "alt": "#",
-#         "title": "Example Product",
-#         "_id": 384765760239567
-#     },
-#     {
-#         "src": "https://ih1.redbubble.net/image.1751903044.6537/fp,840x830,black,off_white,box20,s,f8f8f8-pad,1000x1000,f8f8f8.jpg",
-#         "alt": "#",
-#         "title": "Example Product",
-#         "_id": 2398562309785623890564
-#     },
-#     {
-#         "src": "https://ih1.redbubble.net/image.1751903044.6537/fp,840x830,black,off_white,box20,s,f8f8f8-pad,1000x1000,f8f8f8.jpg",
-#         "alt": "#",
-#         "title": "Example Product",
-#         "_id": 897234789345908
-#     },
-#     {
-#         "src": "https://ih1.redbubble.net/image.1751903044.6537/fp,840x830,black,off_white,box20,s,f8f8f8-pad,1000x1000,f8f8f8.jpg",
-#         "alt": "#",
-#         "title": "Example Product",
-#         "_id": 6542345678345
-#     },
-#     {
-#         "src": "https://ih1.redbubble.net/image.1751903044.6537/fp,840x830,black,off_white,box20,s,f8f8f8-pad,1000x1000,f8f8f8.jpg",
-#         "alt": "#",
-#         "title": "Example Product",
-#         "_id": 76435287667
-#     },
-#     {
-#         "src": "https://ih1.redbubble.net/image.1751903044.6537/fp,840x830,black,off_white,box20,s,f8f8f8-pad,1000x1000,f8f8f8.jpg",
-#         "alt": "#",
-#         "title": "Example Product",
-#         "_id": 764524756
-#     },
-# ]
+products = [
+    {
+        "src": "data:image/gif;base64,R0lGODdhFQAXAPAAANba3wAAACwAAAAAFQAXAAACFISPqcvtD6OctNqLs968+w+GolUAADs=",
+        "alt": "#",
+        "title": "Example Product",
+        "_id": 123456789
+    },
+    {
+        "src": "https://ih1.redbubble.net/image.1751903044.6537/fp,840x830,black,off_white,box20,s,f8f8f8-pad,1000x1000,f8f8f8.jpg",
+        "alt": "#",
+        "title": "Example Product",
+        "_id": 7653413
+    },
+    {
+        "src": "https://ih1.redbubble.net/image.1751903044.6537/fp,840x830,black,off_white,box20,s,f8f8f8-pad,1000x1000,f8f8f8.jpg",
+        "alt": "#",
+        "title": "Example Product",
+        "_id": 9786416736078
+    },
+    {
+        "src": "https://ih1.redbubble.net/image.1751903044.6537/fp,840x830,black,off_white,box20,s,f8f8f8-pad,1000x1000,f8f8f8.jpg",
+        "alt": "#",
+        "title": "Example Product",
+        "_id": 7645262356989
+    },
+    {
+        "src": "https://ih1.redbubble.net/image.1751903044.6537/fp,840x830,black,off_white,box20,s,f8f8f8-pad,1000x1000,f8f8f8.jpg",
+        "alt": "#",
+        "title": "Example Product",
+        "_id": 76533412359567874336745
+    },
+    {
+        "src": "https://ih1.redbubble.net/image.1751903044.6537/fp,840x830,black,off_white,box20,s,f8f8f8-pad,1000x1000,f8f8f8.jpg",
+        "alt": "#",
+        "title": "Example Product",
+        "_id": 87641797868
+    },
+    {
+        "src": "https://ih1.redbubble.net/image.1751903044.6537/fp,840x830,black,off_white,box20,s,f8f8f8-pad,1000x1000,f8f8f8.jpg",
+        "alt": "#",
+        "title": "Example Product",
+        "_id": 8965452124547867800679546
+    },
+    {
+        "src": "https://ih1.redbubble.net/image.1751903044.6537/fp,840x830,black,off_white,box20,s,f8f8f8-pad,1000x1000,f8f8f8.jpg",
+        "alt": "#",
+        "title": "Example Product",
+        "_id": 8728758734
+    },
+    {
+        "src": "https://ih1.redbubble.net/image.1751903044.6537/fp,840x830,black,off_white,box20,s,f8f8f8-pad,1000x1000,f8f8f8.jpg",
+        "alt": "#",
+        "title": "Example Product",
+        "_id": 384765760239567
+    },
+    {
+        "src": "https://ih1.redbubble.net/image.1751903044.6537/fp,840x830,black,off_white,box20,s,f8f8f8-pad,1000x1000,f8f8f8.jpg",
+        "alt": "#",
+        "title": "Example Product",
+        "_id": 2398562309785623890564
+    },
+    {
+        "src": "https://ih1.redbubble.net/image.1751903044.6537/fp,840x830,black,off_white,box20,s,f8f8f8-pad,1000x1000,f8f8f8.jpg",
+        "alt": "#",
+        "title": "Example Product",
+        "_id": 897234789345908
+    },
+    {
+        "src": "https://ih1.redbubble.net/image.1751903044.6537/fp,840x830,black,off_white,box20,s,f8f8f8-pad,1000x1000,f8f8f8.jpg",
+        "alt": "#",
+        "title": "Example Product",
+        "_id": 6542345678345
+    },
+    {
+        "src": "https://ih1.redbubble.net/image.1751903044.6537/fp,840x830,black,off_white,box20,s,f8f8f8-pad,1000x1000,f8f8f8.jpg",
+        "alt": "#",
+        "title": "Example Product",
+        "_id": 76435287667
+    },
+    {
+        "src": "https://ih1.redbubble.net/image.1751903044.6537/fp,840x830,black,off_white,box20,s,f8f8f8-pad,1000x1000,f8f8f8.jpg",
+        "alt": "#",
+        "title": "Example Product",
+        "_id": 764524756
+    },
+]
 
 ############################################################
 # ROUTES
@@ -279,31 +279,32 @@ def href_from_id(item_id):
 @app.route('/item/<item_id>')
 def item(item_id):
     """Display the item page."""
-    href = href_from_id(item_id)
+    # href = href_from_id(item_id)
 
-    r = requests.get(href)
-    soup = bs(r.content)
-    imgs = soup.find_all("img", attrs={"class": "GalleryImage__img--12Vov"})
-    srcs = []
-    for img in imgs:
-        srcs.append(img['src'])
-    price = soup.find("span", attrs={"class": "styles__box--2Ufmy styles__text--23E5U styles__display2--3HydH styles__display-block--3kWC4 styles__marginBottom-m--2W0L-"}).contents[0]
+    # r = requests.get(href)
+    # soup = bs(r.content)
+    # imgs = soup.find_all("img", attrs={"class": "GalleryImage__img--12Vov"})
+    # srcs = []
+    # for img in imgs:
+    #     srcs.append(img['src'])
+    # price = soup.find("span", attrs={"class": "styles__box--2Ufmy styles__text--23E5U styles__display2--3HydH styles__display-block--3kWC4 styles__marginBottom-m--2W0L-"}).contents[0]
 
 
-    src_main = srcs
-    src_li = srcs
-    src_len = len(srcs)
-    if src_len < 3:
-        if src_len < 2:
-            src_main = srcs[0]
-            src_li.remove(srcs[0])
-        else:
-            src_main = srcs[1]
-    else:
-        src_main = srcs[2]
-        src_li.remove(srcs[2])
+    # src_main = srcs
+    # src_li = srcs
+    # src_len = len(srcs)
+    # if src_len < 3:
+    #     if src_len < 2:
+    #         src_main = srcs[0]
+    #         src_li.remove(srcs[0])
+    #     else:
+    #         src_main = srcs[1]
+    # else:
+    #     src_main = srcs[2]
+    #     src_li.remove(srcs[2])
         
-
+    src_main = "https://ih1.redbubble.net/image.1751903044.6537/fp,840x830,black,off_white,box20,s,f8f8f8-pad,1000x1000,f8f8f8.jpg"
+    src_li = ["https://ih1.redbubble.net/image.1751903044.6537/fp,840x830,black,off_white,box20,s,f8f8f8-pad,1000x1000,f8f8f8.jpg","https://ih1.redbubble.net/image.1751903044.6537/fp,840x830,black,off_white,box20,s,f8f8f8-pad,1000x1000,f8f8f8.jpg","https://ih1.redbubble.net/image.1751903044.6537/fp,840x830,black,off_white,box20,s,f8f8f8-pad,1000x1000,f8f8f8.jpg"]
 
     context = {
         "src_main": src_main,
