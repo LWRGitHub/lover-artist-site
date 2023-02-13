@@ -1,7 +1,6 @@
 # Lover's Artist website
 Built with Flask & Jinga2 this site is grate for organizing art for sale & As a plus It has the capability to sell art supplies as well.
 
-***[View Website](https://lover-artist-site.herokuapp.com)***
 
 
 ## Tech Used
